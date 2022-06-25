@@ -44,7 +44,7 @@ void IrcClient::onError(const QTcpSocket::SocketError& error)
 void IrcClient::onReadyRead()
 {
     const auto message = this->socket->readAll();
-    //emit this->onIncomingMessage(message);
+    emit this->onIncomingMessage(message);
 }
 
 void IrcClient::connectToHost(const QString& address, quint16 port)
